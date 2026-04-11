@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def pow(a, b):
-    t = a**b
-    return t
+    n = a ** b
+    return n

@@ -1,26 +1,27 @@
 #!/usr/bin/python3
 """
-Bu modul 'add_integer' funksiyasını təqdim edir.
+This module provides the 'add_integer' function.
 """
 
 
 def add_integer(a, b=98):
     """
-    İki rəqəmi toplayır. NaN və ya Infinity üçün TypeError qaytarır.
+    Adds two numbers. Raises TypeError for NaN or Infinity.
     """
-    # 1. Tip yoxlanışı (Siyahı, string və s. üçün)
+
+    # 1. Type checking (for list, string, etc.)
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # 2. Dəyər yoxlanışı (NaN və Infinity üçün)
-    # NaN özünə bərabər deyil (a != a).
-    # Infinity isə mütləq dəyərinə görə sonsuzdur.
+    # 2. Value checking (NaN and Infinity)
+    # NaN is not equal to itself (a != a).
+    # Infinity is detected using float('inf').
     if a != a or abs(a) == float('inf'):
         raise TypeError("a must be an integer")
     if b != b or abs(b) == float('inf'):
         raise TypeError("b must be an integer")
 
-    # 3. İndi təhlükəsiz şəkildə çevirib toplaya bilərik
+    # 3. Safe conversion and addition
     return int(a) + int(b)

@@ -1,0 +1,36 @@
+The ``5-text_indentation`` module
+=================================
+
+Importing the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Missing argument:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Non-string argument (integer):
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Normal text with spaces:
+    >>> text_indentation("Hello. How are you? I am fine: great")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    great
+
+Text with lots of spaces at the beginning and end:
+    >>> text_indentation("   Holberton School.   ")
+    Holberton School.
+    <BLANKLINE>
+
+Text without any of the specific punctuations:
+    >>> text_indentation("This is just a regular text without punctuation")
+    This is just a regular text without punctuation

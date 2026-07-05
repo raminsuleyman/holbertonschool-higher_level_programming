@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items List</title>
+</head>
+<body>
+    <h1>Items List</h1>
+
+    {# Check if the items list has any elements #}
+    {% if items and items|length > 0 %}
+        <ul>
+            {# Loop through each item in the list #}
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No items found</p>
+    {% endif %}
+</body>
+</html>
